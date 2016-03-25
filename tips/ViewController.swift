@@ -8,8 +8,8 @@
 // read me: https://gist.github.com/timothy1ee/9de467c4876fe38ff18c
 // Creating the Tip Calculator: https://gist.github.com/timothy1ee/6858b706304a2397a7e2
 
-
-
+import Font_Awesome_Swift
+//import FontAwesome
 import UIKit
 
 class ViewController: UIViewController {
@@ -18,10 +18,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
+    @IBOutlet weak var settingBarButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         tipLabel.text = "$0.00"
-        totalLabel.text = "$0.00" 
+        totalLabel.text = "$0.00"
+        
+        self.navigationItem.rightBarButtonItem!.FAIcon = FAType.FACog
+
         
     }
 

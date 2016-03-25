@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="71n-zY-IkN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -81,8 +81,16 @@
                             <outletCollection property="gestureRecognizers" destination="8MK-LQ-AwA" appends="YES" id="0yn-qn-Hwi"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="cWT-SK-lg8">
+                        <barButtonItem key="rightBarButtonItem" title="Setting" id="R8E-wo-q7a">
+                            <connections>
+                                <segue destination="nh9-z1-ss1" kind="push" id="Fh9-fw-EzX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="gBS-9I-gWV" id="dCt-LT-w4e"/>
+                        <outlet property="settingBarButton" destination="R8E-wo-q7a" id="IwI-N0-Jtf"/>
                         <outlet property="tipControl" destination="uFJ-T0-pMX" id="Rju-9G-17B"/>
                         <outlet property="tipLabel" destination="P1T-gj-uXB" id="1F5-Zn-l5O"/>
                         <outlet property="totalLabel" destination="GWb-55-JuA" id="cVC-b9-LYd"/>
@@ -94,6 +102,55 @@
                         <action selector="onTap:" destination="BYZ-38-t0r" id="NlJ-HK-vtk"/>
                     </connections>
                 </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="606" y="366"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="zRO-7K-b9e">
+            <objects>
+                <viewController id="nh9-z1-ss1" customClass="SettingViewController" customModule="tips" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iH4-7t-7yh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Lws-xL-9eo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UA5-Z4-kBj">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="x2l-0d-BAi">
+                            <connections>
+                                <action selector="onCancelButton:" destination="nh9-z1-ss1" id="tdb-z5-3Nl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Lws-xL-9eo" id="e1j-Tg-oYJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Zh-5v-G5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1144" y="366"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PE2-rf-Ra0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="71n-zY-IkN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ik8-P9-Td0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KWw-QY-UJD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DjD-Oc-Vfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="74" y="366"/>
         </scene>
