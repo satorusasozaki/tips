@@ -33,6 +33,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
+        splitBy2Label.text = "$0.00"
+        splitBy3Label.text = "$0.00"
+        splitBy4Label.text = "$0.00"
         
         self.navigationItem.rightBarButtonItem!.FAIcon = FAType.FACog
         
@@ -59,9 +62,9 @@ class ViewController: UIViewController {
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
         
-        splitBy2Label.text =  String(format: "%.2f", total/2)
-        splitBy3Label.text =  String(format: "%.2f", total/3)
-        splitBy4Label.text =  String(format: "%.2f", total/4)
+        splitBy2Label.text =  String(format: "$%.2f", total/2)
+        splitBy3Label.text =  String(format: "$%.2f", total/3)
+        splitBy4Label.text =  String(format: "$%.2f", total/4)
 
         
     }
