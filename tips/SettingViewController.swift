@@ -45,10 +45,9 @@ class SettingViewController: UIViewController, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let (tipLabel, tipValue) = tipAmounts[indexPath.row]
-            var tipField = UITextField(frame: CGRectMake(275,5,50,35))
+            let tipField = UITextField(frame: CGRectMake(275,5,50,35))
             tipField.text = tipValue
             cell.contentView.addSubview(tipField)
-            
             cell.textLabel?.text = tipLabel
         case 1:
             cell.textLabel?.text = colors[indexPath.row]
@@ -56,7 +55,6 @@ class SettingViewController: UIViewController, UITableViewDataSource {
             let colorSwitch = UISwitch()
             colorSwitch.addTarget(self, action: #selector(switchValueDidChange), forControlEvents: .ValueChanged)
             cell.accessoryView = colorSwitch
-            
         case 2:
             cell.textLabel?.text = locations[indexPath.row]
         default:

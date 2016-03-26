@@ -19,6 +19,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var settingBarButton: UIBarButtonItem!
+
+    @IBOutlet weak var splitBy2Label: UILabel!
+    @IBOutlet weak var splitBy3Label: UILabel!
+    @IBOutlet weak var splitBy4Label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         tipLabel.text = "$0.00"
@@ -42,6 +46,12 @@ class ViewController: UIViewController {
         let total = billAmount + tip
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+        
+        splitBy2Label.text =  String(format: "%.2f", total/2)
+        splitBy3Label.text =  String(format: "%.2f", total/3)
+        splitBy4Label.text =  String(format: "%.2f", total/4)
+
+        
     }
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
