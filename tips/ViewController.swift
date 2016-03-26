@@ -23,14 +23,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var splitBy2Label: UILabel!
     @IBOutlet weak var splitBy3Label: UILabel!
     @IBOutlet weak var splitBy4Label: UILabel!
+    
+    var ud: NSUserDefaults?
+    var percentageKey: String?
+    
+    var tipPercentages: [Double]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         
         self.navigationItem.rightBarButtonItem!.FAIcon = FAType.FACog
-
         
+        ud = NSUserDefaults.standardUserDefaults()
+        percentageKey = "percentage"
+        tipPercentages = ud?.objectForKey(percentageKey!) as? [Double]
+        tipControl.setTitle(String(format:"%.0f", tipPercentages![0]*100) + "%", forSegmentAtIndex: 0)
+        tipControl.setTitle(String(format:"%.0f", tipPercentages![1]*100) + "%", forSegmentAtIndex: 1)
+        tipControl.setTitle(String(format:"%.0f", tipPercentages![2]*100) + "%", forSegmentAtIndex: 2)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,8 +51,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
-        let tipPercentages = [0.18, 0.20, 0.22]
-        let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
+        //let tipPercentages = ud?.objectForKey(percentageKey!) as? [Double]
+        let tipPercentage = tipPercentages![tipControl.selectedSegmentIndex]
         let billAmount =  (billField.text! as NSString).doubleValue
         let tip = billAmount * tipPercentage
         let total = billAmount + tip

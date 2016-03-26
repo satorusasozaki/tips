@@ -160,11 +160,15 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="lWx-lH-FGC" appends="YES" id="utG-Gh-U11"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="UA5-Z4-kBj">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="x2l-0d-BAi">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="tPA-Mx-ORt">
                             <connections>
-                                <action selector="onCancelButton:" destination="nh9-z1-ss1" id="tdb-z5-3Nl"/>
+                                <action selector="onBackButton:" destination="nh9-z1-ss1" id="zjX-Bu-BCL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -173,6 +177,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Zh-5v-G5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="lWx-lH-FGC">
+                    <connections>
+                        <action selector="onTap:" destination="nh9-z1-ss1" id="y2M-we-CyO"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1277" y="366"/>
         </scene>

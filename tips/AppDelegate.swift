@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let defaultPercentages = [0.18, 0.2, 0.22]
+        let percentageKey = "percentage"
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.setObject(defaultPercentages, forKey: percentageKey)
+        ud.synchronize()
+        
         return true
     }
 
